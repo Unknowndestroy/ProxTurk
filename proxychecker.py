@@ -19,7 +19,7 @@ def check_proxy(proxy, proxies_list):
     try:
         # Test Link
         url = "http://www.google.com"
-        response = requests.get(url, proxies={"http": f"http://{proxy}", "https": f"https://{proxy}"}, timeout=5)
+        response = requests.get(url, proxies={"http": f"http://{proxy}", "https": f"https://{proxy}"}, timeout=15)
         if response.status_code == 200:
             slow_print(f"{fg(2)}✔️ Correct Proxy:{attr(0)} {fg(4)}{proxy}{attr(0)}", 0.0012)
         else:
